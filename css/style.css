@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Vollkorn');
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* ====== Elements ====== */
+a{
+  transition: all 0.2s;
+}
+a:hover, a:focus{
+  text-decoration: none;
+}
+body{
+	font-family: 'Vollkorn', serif;
+}
+
+/* ======= navbar ======= */
+.nav-img{
+  color: #2bace2 !important;
+  font-family: Oswald;
+  font-weight: bold;
+}
+.nav-img img{
+  display: inline-block;
+  margin-right: 5px;
+}
+.site-header{
+	height: 52px;
+	border-radius: 0px;
+}
+
+/* ======= footer ======= */
+.site-footer{
+	height: 60px;
+	margin-top: 40px;
+}
+
+/* ======= index ======= */
+.prop-header{
+	text-align: center;
+}
+
+.prop-header span{
+	font-style: italic;
+	color: rgb(236,141,0);
+}
+
+.prop-icon{
+	font-size: 40px;
+}
+
+.prop-row{
+	text-align: center;
+	margin-top: 40px;
+}
+
+.sub-header{
+	color: gray;
+}
