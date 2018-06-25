@@ -51,6 +51,12 @@ body{
 
 .prop-icon{
 	font-size: 40px;
+	transition: all 0.2s;
+}
+
+.prop-icon:hover{
+	transform: scale(1.5, 1.5);
+	color: #32d8c1;
 }
 
 .prop-row{
@@ -63,6 +69,16 @@ body{
 }
 
 .login-container{
-	padding: 40px 50px;
+	padding: 0px 50px;
 	border-right: 1px solid #ccc;
+}
+
+.signup-container{
+	padding: 40[x 50px;]
+}
+
+.log-text{
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+	margin-bottom: 20px;
 }

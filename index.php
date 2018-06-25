@@ -6,6 +6,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+	<link rel="icon" href="img/logo.ico" type="image/x-icon">
+
 	<!-- required stylesheet -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -20,7 +23,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 login-container">
-				 <form class="form-horizontal" action="">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2 class="log-text">Log In</h2>
+					</div>
+				</div>
+				<form class="form-horizontal" action="">
 				  <div class="form-group">
 				    <label class="control-label col-sm-2" for="email">Email:</label>
 				    <div class="col-sm-10">
@@ -35,12 +43,17 @@
 				  </div>
 				  <div class="form-group">
 				    <div class="col-sm-offset-2 col-sm-10">
-				      <button type="submit" class="btn btn-primary pull-right">Log In</button>
+				      <button type="submit" class="btn btn-success pull-right">Log In</button>
 				    </div>
 				  </div>
 				</form>
 			</div>
 			<div class="col-sm-6 signup-container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2 class="log-text">Sign Up</h2>
+					</div>
+				</div>
 				<form class="form-horizontal" action="">
 				  <div class="form-group">
 				    <label class="control-label col-sm-4" for="email">Email:</label>
@@ -62,7 +75,7 @@
 				  </div>
 				  <div class="form-group">
 				    <div class="col-sm-offset-2 col-sm-10">
-				      <button type="submit" class="btn btn-primary pull-right">Register</button>
+				      <button type="submit" class="btn btn-success pull-right">Register</button>
 				    </div>
 				  </div>
 				</form>
