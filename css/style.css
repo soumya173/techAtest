@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Vollkorn');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Vollkorn');
 
 * {
 	margin: 0px;
@@ -14,6 +14,7 @@ a:hover, a:focus{
 }
 body{
 	font-family: 'Vollkorn', serif;
+	/*font-family: 'Oswald', sans-serif;*/
 }
 
 /* ======= navbar ======= */
@@ -40,6 +41,7 @@ body{
 /* ======= index ======= */
 .prop-header{
 	text-align: center;
+	font-family: 'Oswald', sans-serif;
 }
 
 .prop-header span{
@@ -58,4 +60,9 @@ body{
 
 .sub-header{
 	color: gray;
+}
+
+.login-container{
+	padding: 40px 50px;
+	border-right: 1px solid #ccc;
 }

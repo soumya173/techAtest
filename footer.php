@@ -6,9 +6,9 @@
     </div>
     <div class="col-sm-6">
       <p class="pull-right">For any issue contact @
-      	<a href="https://github.com/soumya173">soumya173</a> /
-      	<a href="https://github.com/sankhammer">sankhammer</a> /
-      	<a href="https://github.com/jaydevmaity">jaydevmaity</a></p>
+      	<a target="_blank" href="https://github.com/soumya173">soumya173</a> /
+      	<a target="_blank" href="https://github.com/sankhammer">sankhammer</a> /
+      	<a target="_blank" href="https://github.com/jaydevmaity">jaydevmaity</a></p>
     </div>
   </div>
 </div> <!-- /Footer -->

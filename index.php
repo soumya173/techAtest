@@ -19,6 +19,59 @@
 
 	<div class="container">
 		<div class="row">
+			<div class="col-sm-6 login-container">
+				 <form class="form-horizontal" action="">
+				  <div class="form-group">
+				    <label class="control-label col-sm-2" for="email">Email:</label>
+				    <div class="col-sm-10">
+				      <input type="email" class="form-control" id="email" placeholder="Enter email">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-2" for="pwd">Password:</label>
+				    <div class="col-sm-10">
+				      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" class="btn btn-primary pull-right">Log In</button>
+				    </div>
+				  </div>
+				</form>
+			</div>
+			<div class="col-sm-6 signup-container">
+				<form class="form-horizontal" action="">
+				  <div class="form-group">
+				    <label class="control-label col-sm-4" for="email">Email:</label>
+				    <div class="col-sm-8">
+				      <input type="email" class="form-control" id="email" placeholder="Enter email">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-4" for="pwd">Password:</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-4" for="pwd">Confirm Password:</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" class="btn btn-primary pull-right">Register</button>
+				    </div>
+				  </div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
 			<div class="col-sm-12">
 				<h3 class="prop-header">Everything you need to <span>#PracticeBetter</span></h3>
 			</div>
