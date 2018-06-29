@@ -16,6 +16,7 @@
 	<!-- required scripts -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/func.js"></script>
 </head>
 <body>
 	<?php include_once "header.php"; ?>
@@ -29,17 +30,17 @@
 					</div>
 				</div>
 				<form class="form-horizontal" action="">
-					<div class="form-group has-feedback">
+					<div class="form-group has-feedback login-group">
 						<label class="control-label col-sm-2" for="email">Email:</label>
 						<div class="col-sm-10">
-							<input type="email" class="form-control" id="email" placeholder="Enter email" required>
+							<input type="email" class="form-control" id="login_email" placeholder="Enter email" required>
 							<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 						</div>
 					</div>
-					<div class="form-group has-feedback">				  	
+					<div class="form-group has-feedback pwd_group">
 						<label class="control-label col-sm-2" for="pwd">Password:</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control" id="pwd" placeholder="Enter password" required>
+							<input type="password" class="form-control" id="login_pwd" placeholder="Enter password" required>
 							<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 						</div>
 					</div>
@@ -60,40 +61,40 @@
 					</div>
 				</div>
 				<form class="form-horizontal" action="">
-					<div class="form-group has-feedback">
+					<div class="form-group has-feedback semail_group">
 						<label class="control-label col-sm-4" for="email">Email:</label>
 						<div class="col-sm-8">
-							<input type="email" class="form-control" id="email" placeholder="Enter email" required>
+							<input type="email" class="form-control" id="signup_email" placeholder="Enter email" required>
 							<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 						</div>
 					</div>
-					<div class="form-group has-feedback">
+					<div class="form-group has-feedback spwd_group">
 						<label class="control-label col-sm-4" for="pwd">Password:</label>
 						<div class="col-sm-8">
-							<input type="password" class="form-control" id="pwd" placeholder="Enter password" required>
+							<input type="password" class="form-control" id="signup_pwd" placeholder="Enter password" required>
 							<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 						</div>
 					</div>
-					<div class="form-group has-feedback">
+					<div class="form-group has-feedback scpwd_group">
 						<label class="control-label col-sm-4" for="pwd">Confirm Password:</label>
 						<div class="col-sm-8">
-							<input type="password" class="form-control" id="pwd" placeholder="Enter password" required>
+							<input type="password" class="form-control" id="signup_cpwd" placeholder="Enter password" required>
 							<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group sname-group">
 						<label class="control-label col-sm-4" for="pwd">Full Name:</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="pwd" placeholder="First Name" required>
+							<input type="text" class="form-control" id="signup_fname" placeholder="First Name" required>
 						</div>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="pwd" placeholder="Last Name" required>
+							<input type="text" class="form-control" id="signup_lname" placeholder="Last Name" required>
 						</div>
 					</div>
-					<div class="form-group has-feedback">
+					<div class="form-group has-feedback smobile-group">
 						<label class="control-label col-sm-4" for="pwd">Mobile Number:</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control" id="pwd" placeholder="Enter Mobile Number" required>
+							<input type="text" class="form-control" id="signup_mobile" placeholder="Enter Mobile Number" required>
 							<span class="glyphicon glyphicon-modal-window form-control-feedback"></span>
 						</div>
 					</div>
@@ -114,7 +115,7 @@
 			</div>
 		</div>
 		<div class="row prop-row">
-			<div class="col-sm-4">
+			<div class="col-sm-4 prop-cols">
 				<div class="row">
 					<div class="col-sm-12">
 						<span class="glyphicon glyphicon-edit prop-icon"></span>
@@ -133,7 +134,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-4 prop-cols">
 				<div class="row">
 					<div class="col-sm-12">
 						<span class="glyphicon glyphicon-book prop-icon"></span>
@@ -152,7 +153,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-4 prop-cols">
 				<div class="row">
 					<div class="col-sm-12">
 						<span class="glyphicon glyphicon-signal prop-icon"></span>
