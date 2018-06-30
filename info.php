@@ -28,8 +28,6 @@
 
 	<?php
 		$alert_class = '';
-		$_SESSION['type'] = "error";
-		$_SESSION['message'] = "Invalid Credentials";
 		if (isset($_SESSION['message']) && isset($_SESSION['type'])) {
 			if ($_SESSION['type'] == 'error') {
 				$alert_class = 'alert-danger';

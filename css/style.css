@@ -35,7 +35,7 @@ body{
 /* ======= footer ======= */
 .site-footer{
 	height: 60px;
-	margin-top: 40px;
+	margin-top: calc(100vh - 160px);
 }
 
 /* ======= index ======= */
@@ -92,4 +92,8 @@ body{
 
 .forgot-pass{
 	margin-top: 10px;
+}
+
+.email-error{
+	display: none;
 }

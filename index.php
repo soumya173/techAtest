@@ -26,26 +26,25 @@
 	<?php include_once "header.php"; ?>
 
 	<?php
-		if(isset($_POST["register"]) )
-		{
+		// if(isset($_POST["register"]) )
+		// {
 
-			$password = $_POST['spassword'];
-			$cnfpassword = $_POST['scpassword'];
-			$fname = $_POST['sfname'];
-			$lname = $_POST['slname'];
-			$email = $_POST['semail'];
-			$mobile = $_POST['smobile'];
+		// 	$password = $_POST['spassword'];
+		// 	$cnfpassword = $_POST['scpassword'];
+		// 	$fname = $_POST['sfname'];
+		// 	$lname = $_POST['slname'];
+		// 	$email = $_POST['semail'];
+		// 	$mobile = $_POST['smobile'];
 
 
-			$sql = "INSERT INTO users(userid, password, fname, lname, mobile, email) VALUES('', '$password', '$fname', '$lname', '$mobile', '$email')";
+		// 	$sql = "INSERT INTO users(userid, password, fname, lname, mobile, email) VALUES('', '$password', '$fname', '$lname', '$mobile', '$email')";
 
-			if( mysqli_query($con, $sql) ){
-				echo "User created Successfully";
-			}else{
-				echo "User creation failed.";
-			}
-
-		}
+		// 	if( mysqli_query($con, $sql) ){
+		// 		echo "success";
+		// 	}else{
+		// 		echo "error";
+		// 	}
+		// }
 
 	?>
 <?php
@@ -111,12 +110,32 @@
 						<h2 class="log-text">Sign Up</h2>
 					</div>
 				</div>
+				<div class="row signup-success" style="display: none;">
+					<div class="col-sm-12">
+						<div class="alert alert-success">
+							<h4>Successfully signed up. Now you can login.</h4>
+						</div>
+					</div>
+				</div>
+				<div class="row signup-error" style="display: none;">
+					<div class="col-sm-12">
+						<div class="alert alert-danger">
+							<h4>Some error occurd. Please try again.</h4>
+						</div>
+					</div>
+				</div>
 				<form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
 					<div class="form-group has-feedback semail_group">
 						<label class="control-label col-sm-4" for="email">Email:</label>
 						<div class="col-sm-8">
 							<input type="email" class="form-control" name="semail" id="signup_email" placeholder="Enter email" required>
 							<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+						</div>
+					</div>
+					<div class="form-group email-error">
+						<label class="control-label col-sm-4" for="email"></label>
+						<div class="col-sm-8">
+							<div class="alert alert-danger">*Email address already taken</div>
 						</div>
 					</div>
 					<div class="form-group has-feedback spwd_group">
@@ -151,7 +170,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-success pull-right" name="register"> <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Register</button>
+							<button type="submit" id="signup_button" class="btn btn-success pull-right" name="register"> <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Register</button>
 						</div>
 					</div>
 				</form>
