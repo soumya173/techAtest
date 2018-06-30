@@ -28,29 +28,50 @@ include("query.php");
 	<?php
 		if(isset($_POST["register"]) )
 		{
-			echo "form submitted.";
-			$password = md5($_POST['spassword']);
-			$cnfpassword = md5($_POST['scpassword']);
+			
+			$password = $_POST['spassword'];
+			$cnfpassword = $_POST['scpassword'];
 			$fname = $_POST['sfname'];
 			$lname = $_POST['slname'];
 			$email = $_POST['semail'];
 			$mobile = $_POST['smobile'];
 			
 
-			$obj = new query();
-			if( $obj->create_user($password, $cnfpassword, $fname, $lname, $mobile, $email) ){
+			$sql = "INSERT INTO users(userid, password, fname, lname, mobile, email) VALUES('', '$password', '$fname', '$lname', '$mobile', '$email')";
+			
+			if( mysqli_query($con, $sql) ){
 				echo "User created Successfully";
 			}else{
 				echo "User creation failed.";
 			}
-			
+					
 		}
-		else
-		{
-			echo "Please go back and fill up the form.";
-		}
+		
 	?>
+<?php 
+ if(isset($_POST["login"]) )
+ {
+	
+	$username=$_POST["uemail"];
+	$password=$_POST["upassword"];
+	 
+	$sql = "SELECT userid FROM users WHERE email = '$username' and password = '$password'";
+	$result = mysqli_query($con, $sql);
 
+	$count = mysqli_num_rows($result);	
+	
+	
+	   if($count == 1) {
+         echo "Logged in successfully";
+         
+         // header("location: sona.php");
+      }else {
+         
+		 $error = "Your user Name or Password is invalid";
+		 echo $error;
+      }
+ }
+?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 login-container">
@@ -59,18 +80,18 @@ include("query.php");
 						<h2 class="log-text">Log In</h2>
 					</div>
 				</div>
-				<form class="form-horizontal" action="">
+				<form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
 					<div class="form-group has-feedback login-group">
 						<label class="control-label col-sm-2" for="email">Email:</label>
 						<div class="col-sm-10">
-							<input type="email" class="form-control" id="login_email" placeholder="Enter email" required>
+							<input type="email" name="uemail" class="form-control" id="login_email" placeholder="Enter email" required>
 							<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 						</div>
 					</div>
 					<div class="form-group has-feedback pwd_group">
 						<label class="control-label col-sm-2" for="pwd">Password:</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control" id="login_pwd" placeholder="Enter password" required>
+							<input type="password" name="upassword" class="form-control" id="login_pwd" placeholder="Enter password" required>
 							<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 						</div>
 					</div>
@@ -79,7 +100,7 @@ include("query.php");
 							<a href="">Forgot Password?</a>
 						</div>
 						<div class="col-sm-2">
-							<button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;Log In</button>
+							<button type="submit" name="login" class="btn btn-success pull-right"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;Log In</button>
 						</div>
 					</div>
 				</form>
