@@ -1,3 +1,7 @@
+<?php
+include("query.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +24,32 @@
 </head>
 <body>
 	<?php include_once "header.php"; ?>
+	
+	<?php
+		if(isset($_POST["register"]) )
+		{
+			echo "form submitted.";
+			$password = md5($_POST['spassword']);
+			$cnfpassword = md5($_POST['scpassword']);
+			$fname = $_POST['sfname'];
+			$lname = $_POST['slname'];
+			$email = $_POST['semail'];
+			$mobile = $_POST['smobile'];
+			
+
+			$obj = new query();
+			if( $obj->create_user($password, $cnfpassword, $fname, $lname, $mobile, $email) ){
+				echo "User created Successfully";
+			}else{
+				echo "User creation failed.";
+			}
+			
+		}
+		else
+		{
+			echo "Please go back and fill up the form.";
+		}
+	?>
 
 	<div class="container">
 		<div class="row">
@@ -60,47 +90,47 @@
 						<h2 class="log-text">Sign Up</h2>
 					</div>
 				</div>
-				<form class="form-horizontal" action="">
+				<form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
 					<div class="form-group has-feedback semail_group">
 						<label class="control-label col-sm-4" for="email">Email:</label>
 						<div class="col-sm-8">
-							<input type="email" class="form-control" id="signup_email" placeholder="Enter email" required>
+							<input type="email" class="form-control" name="semail" id="signup_email" placeholder="Enter email" required>
 							<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 						</div>
 					</div>
 					<div class="form-group has-feedback spwd_group">
 						<label class="control-label col-sm-4" for="pwd">Password:</label>
 						<div class="col-sm-8">
-							<input type="password" class="form-control" id="signup_pwd" placeholder="Enter password" required>
+							<input type="password" class="form-control" name="spassword" id="signup_pwd" placeholder="Enter password" required>
 							<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 						</div>
 					</div>
 					<div class="form-group has-feedback scpwd_group">
 						<label class="control-label col-sm-4" for="pwd">Confirm Password:</label>
 						<div class="col-sm-8">
-							<input type="password" class="form-control" id="signup_cpwd" placeholder="Enter password" required>
+							<input type="password" class="form-control" name="scpassword" id="signup_cpwd" placeholder="Enter password" required>
 							<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 						</div>
 					</div>
 					<div class="form-group sname-group">
 						<label class="control-label col-sm-4" for="pwd">Full Name:</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="signup_fname" placeholder="First Name" required>
+							<input type="text" class="form-control" id="signup_fname" name="sfname" placeholder="First Name" required>
 						</div>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="signup_lname" placeholder="Last Name" required>
+							<input type="text" class="form-control" id="signup_lname" name="slname" placeholder="Last Name" required>
 						</div>
 					</div>
 					<div class="form-group has-feedback smobile-group">
 						<label class="control-label col-sm-4" for="pwd">Mobile Number:</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control" id="signup_mobile" placeholder="Enter Mobile Number" required>
+							<input type="text" class="form-control" id="signup_mobile" name="smobile" placeholder="Enter Mobile Number" required>
 							<span class="glyphicon glyphicon-modal-window form-control-feedback"></span>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-success pull-right"> <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Register</button>
+							<button type="submit" class="btn btn-success pull-right" name="register"> <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Register</button>
 						</div>
 					</div>
 				</form>
