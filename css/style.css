@@ -101,3 +101,22 @@ body{
 .login-error, .signup-error, .signup-success{
 	text-align: center;
 }
+
+/* ======= profile ======= */
+.profile-name span{
+	font-size: 16px;
+	font-weight: normal;
+}
+.graph-container{
+	margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+

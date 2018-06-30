@@ -11,7 +11,7 @@
         </div>
         <div class="collapse navbar-collapse" id="topNavbar">
 
-            <ul class="nav navbar-nav navbar-right">       
+            <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Profile
                     <span class="caret"></span></a>
@@ -20,7 +20,7 @@
                         <li><a href="#"><span class="glyphicon glyphicon-signal"></span>&nbsp;&nbsp;Stats</a></li>
                     </ul>
                 </li>
-                <li><a href="login.php"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;Logout</a></li>
+                <li><a href="logout.php"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;Logout</a></li>
                 <!-- <li><a href="signup.php"><span class="glyphicon glyphicon-plus"></span> Sign Up</a></li> -->
             </ul>
 
