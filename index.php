@@ -25,58 +25,19 @@
 <body>
 	<?php include_once "header.php"; ?>
 
-	<?php
-		// if(isset($_POST["register"]) )
-		// {
-
-		// 	$password = $_POST['spassword'];
-		// 	$cnfpassword = $_POST['scpassword'];
-		// 	$fname = $_POST['sfname'];
-		// 	$lname = $_POST['slname'];
-		// 	$email = $_POST['semail'];
-		// 	$mobile = $_POST['smobile'];
-
-
-		// 	$sql = "INSERT INTO users(userid, password, fname, lname, mobile, email) VALUES('', '$password', '$fname', '$lname', '$mobile', '$email')";
-
-		// 	if( mysqli_query($con, $sql) ){
-		// 		echo "success";
-		// 	}else{
-		// 		echo "error";
-		// 	}
-		// }
-
-	?>
-<?php
- if(isset($_POST["login"]) )
- {
-
-	$username=$_POST["uemail"];
-	$password=$_POST["upassword"];
-
-	$sql = "SELECT userid FROM users WHERE email = '$username' and password = '$password'";
-	$result = mysqli_query($con, $sql);
-
-	$count = mysqli_num_rows($result);
-
-
-	   if($count == 1) {
-         echo "Logged in successfully";
-
-         // header("location: sona.php");
-      }else {
-
-		 $error = "Your user Name or Password is invalid";
-		 echo $error;
-      }
- }
-?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 login-container">
 				<div class="row">
 					<div class="col-sm-12">
 						<h2 class="log-text">Log In</h2>
+					</div>
+				</div>
+				<div class="row login-error" style="display: none;">
+					<div class="col-sm-12">
+						<div class="alert alert-danger">
+							<h6>Invalid credentials. Please try again.</h6>
+						</div>
 					</div>
 				</div>
 				<form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
@@ -99,7 +60,7 @@
 							<a href="">Forgot Password?</a>
 						</div>
 						<div class="col-sm-2">
-							<button type="submit" name="login" class="btn btn-success pull-right"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;Log In</button>
+							<button type="submit" id="login_button" name="login" class="btn btn-success pull-right"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;Log In</button>
 						</div>
 					</div>
 				</form>
@@ -113,14 +74,14 @@
 				<div class="row signup-success" style="display: none;">
 					<div class="col-sm-12">
 						<div class="alert alert-success">
-							<h4>Successfully signed up. Now you can login.</h4>
+							<h6>Successfully signed up. Now you can login.</h6>
 						</div>
 					</div>
 				</div>
 				<div class="row signup-error" style="display: none;">
 					<div class="col-sm-12">
 						<div class="alert alert-danger">
-							<h4>Some error occurd. Please try again.</h4>
+							<h6>Some error occurd. Please try again.</h6>
 						</div>
 					</div>
 				</div>

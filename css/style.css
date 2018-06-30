@@ -97,3 +97,7 @@ body{
 .email-error{
 	display: none;
 }
+
+.login-error, .signup-error, .signup-success{
+	text-align: center;
+}

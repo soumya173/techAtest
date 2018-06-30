@@ -111,4 +111,27 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	$("#login_button").click(function(event){
+		event.preventDefault();
+
+		var email = $("#login_email").val();
+		var password = $("#login_pwd").val();
+
+		$.ajax({
+			type: "POST",
+			url: "login.php",
+			data: {"uemail" : email, "upassword" : password},
+			cache: false,
+			success: function(data){
+				if (data == "success") {
+					$(".login-error").slideUp();
+
+					// window.location.href = "";
+				} else {
+					$(".login-error").slideDown();
+				}
+			}
+		});
+	});
 });
