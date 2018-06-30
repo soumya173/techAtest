@@ -1,5 +1,5 @@
 <?php
-include("query.php");
+	include("connect.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,53 +20,53 @@ include("query.php");
 	<!-- required scripts -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/func.js"></script>
+	<script src="js/scripts.js"></script>
 </head>
 <body>
 	<?php include_once "header.php"; ?>
-	
+
 	<?php
 		if(isset($_POST["register"]) )
 		{
-			
+
 			$password = $_POST['spassword'];
 			$cnfpassword = $_POST['scpassword'];
 			$fname = $_POST['sfname'];
 			$lname = $_POST['slname'];
 			$email = $_POST['semail'];
 			$mobile = $_POST['smobile'];
-			
+
 
 			$sql = "INSERT INTO users(userid, password, fname, lname, mobile, email) VALUES('', '$password', '$fname', '$lname', '$mobile', '$email')";
-			
+
 			if( mysqli_query($con, $sql) ){
 				echo "User created Successfully";
 			}else{
 				echo "User creation failed.";
 			}
-					
+
 		}
-		
+
 	?>
-<?php 
+<?php
  if(isset($_POST["login"]) )
  {
-	
+
 	$username=$_POST["uemail"];
 	$password=$_POST["upassword"];
-	 
+
 	$sql = "SELECT userid FROM users WHERE email = '$username' and password = '$password'";
 	$result = mysqli_query($con, $sql);
 
-	$count = mysqli_num_rows($result);	
-	
-	
+	$count = mysqli_num_rows($result);
+
+
 	   if($count == 1) {
          echo "Logged in successfully";
-         
+
          // header("location: sona.php");
       }else {
-         
+
 		 $error = "Your user Name or Password is invalid";
 		 echo $error;
       }

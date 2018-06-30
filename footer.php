@@ -13,4 +13,4 @@
   </div>
 </div> <!-- /Footer -->
 
-<?php // mysqli_close($conn); ?>
+<?php mysqli_close($con); ?>
