@@ -11,6 +11,7 @@
 
 
 	if($count == 1) {
+		$_SESSION["user_email"] = $username;
 		echo "success";
 	}else {
 		echo "error";
