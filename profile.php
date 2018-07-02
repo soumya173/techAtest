@@ -10,6 +10,9 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 
+		<link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+		<link rel="icon" href="img/logo.ico" type="image/x-icon">
+
 		<!-- Required fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Vollkorn:400,700" rel="stylesheet">
 

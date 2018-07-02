@@ -127,7 +127,7 @@ $(document).ready(function(){
 				if (data == "success") {
 					$(".login-error").slideUp();
 
-					// window.location.href = "";
+					window.location.href = "profile.php";
 				} else {
 					$(".login-error").slideDown();
 				}
