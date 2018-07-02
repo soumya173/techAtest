@@ -130,7 +130,10 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
+						<div class="col-sm-offset-5 col-sm-5">
+							<p class="smandatory-text">* All fields are mandatory</p>
+						</div>
+						<div class="col-sm-2">
 							<button type="submit" id="signup_button" class="btn btn-success pull-right" name="register"> <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Register</button>
 						</div>
 					</div>

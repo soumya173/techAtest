@@ -72,7 +72,7 @@ $(document).ready(function(){
 		if ($("#signup_email").val() == "") {
 			$(".semail_group").addClass("has-error");
 
-			$(".email-error").slideUp();			
+			$(".email-error").slideUp();
 		}else{
 			$(".semail_group").removeClass("has-error");
 
@@ -96,7 +96,7 @@ $(document).ready(function(){
 				});
 			}else{
 				$(".semail_group").addClass("has-error");
-			}			
+			}
 		}
 	});
 
@@ -149,17 +149,17 @@ $(document).ready(function(){
 		var cpassword = $("#signup_cpwd").val();
 		var fname = $("#signup_fname").val();
 		var lname = $("#signup_lname").val();
-		var mobile = $("#signup_mobile").val();		
+		var mobile = $("#signup_mobile").val();
 
 		if (password != cpassword) {
 			$(".spwd_group").addClass("has-error");
-			$(".scpwd_group").addClass("has-error");			
+			$(".scpwd_group").addClass("has-error");
 		}else{
 			$(".spwd_group").removeClass("has-error");
 			$(".scpwd_group").removeClass("has-error");
 
 			passValid = true;
-		}				
+		}
 
 		if (fname.match(/\d+/) || lname.match(/\d+/)) {
 			nameValid = false;
@@ -204,7 +204,7 @@ $(document).ready(function(){
 		if (mobile == "") {
 			$(".smobile-group").addClass("has-error");
 		}
-		
+
 		// console.log(passValid + " : " + nameValid + " : " + mobValid + " : " + emailValid);
 		if (passValid && nameValid && mobValid && emailValid) {
 			$.ajax({
@@ -221,7 +221,7 @@ $(document).ready(function(){
 				}
 			});
 		}
-	});	
+	});
 
 	$(".tech-test-btn").click(function(){
 		window.location.href = "test.php";

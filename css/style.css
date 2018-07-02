@@ -105,6 +105,10 @@ body{
 	text-align: center;
 }
 
+.smandatory-text{
+	color: #ff3535;
+}
+
 /* ======= profile ======= */
 .profile-body{
 	min-height: calc(100vh - 60px);

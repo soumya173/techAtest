@@ -116,13 +116,13 @@
 								<div class="radio">
 									<label><input type="radio" name="q4">Option 4</label>
 								</div>
-							</div>																		
+							</div>
 						</div>
 						<div class="form-group finish-btn">
 							<div class="col-sm-offset-3 col-sm-6">
 								<button type="button" class="btn btn-success btn-lg btn-block">Finish Test</button>
 							</div>
-						</div>						
+						</div>
 					</form>
 				</div>
 			</div>
@@ -130,5 +130,5 @@
 
 		<!-- Including the footer -->
 		<?php include('footer.php'); ?>
-	</body>	
+	</body>
 </html>

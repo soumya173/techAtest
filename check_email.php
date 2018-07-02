@@ -1,5 +1,5 @@
-<?php 
-	include_once "connect.php"; 
+<?php
+	include_once "connect.php";
 
 	$username=$_POST["uemail"];
 
@@ -10,7 +10,7 @@
 
 
 	if($count == 1) {
-		echo "success";     
+		echo "success";
 	}else {
 		echo "error";
 	}
