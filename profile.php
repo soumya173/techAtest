@@ -1,22 +1,22 @@
 <?php
 	include("connect.php");
 ?>
-<?
-$sql = "SELECT fname, lname, email, mobile FROM users";
-$result = mysqli_query($conn, $sql);
+<?php
+	$sql = "SELECT fname, lname, email, mobile FROM users";
+	$result = mysqli_query($con, $sql);
 
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        echo " " . $row["fname"]. " " . $row["lname"]. "<br>";
-        echo "Email " . $row["email"]. "<br>"
-        echo "Mobile " . $row["mobile"]. "<br>";
-    }
-} else {
-    echo "0 results";
-}
+	if (mysqli_num_rows($result) > 0) {
+	    // output data of each row
+	    while($row = mysqli_fetch_assoc($result)) {
+	        echo " " . $row["fname"]. " " . $row["lname"]. "<br>";
+	        echo "Email " . $row["email"]. "<br>";
+	        echo "Mobile " . $row["mobile"]. "<br>";
+	    }
+	} else {
+	    echo "0 results";
+	}
 
-mysqli_close($conn);
+// mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -34,9 +34,6 @@ mysqli_close($conn);
 		<link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
 		<link rel="icon" href="img/logo.ico" type="image/x-icon">
 
-		<!-- Required fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Vollkorn:400,700" rel="stylesheet">
-
 		<!-- Required scripts -->
 		<script src="js/jquery.min.js" charset="utf-8"></script>
 		<script src="js/bootstrap.min.js" charset="utf-8"></script>
@@ -48,11 +45,15 @@ mysqli_close($conn);
 
 		<!-- Including the header -->
 		<?php
-			include_once('connect.php');
 			include('header.php');
 		?>
 
 		<div class="container-fluid site-body profile-body">
+			<div class="row">
+				<div class="col-sm-offset-3 col-sm-6">
+					<button type="button" class="btn btn-success btn-lg btn-block tech-test-btn">tech-A-Test</button>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
 					<ul class="nav nav-tabs profile-tabs">
