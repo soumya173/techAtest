@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2018 at 05:23 PM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Generation Time: Jul 02, 2018 at 05:49 PM
+-- Server version: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -77,9 +77,17 @@ CREATE TABLE `users` (
   `password` varchar(24) NOT NULL,
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
-  `mobile` int(15) NOT NULL,
-  `email` varchar(30) NOT NULL
+  `mobile` varchar(15) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `isAdmin` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userid`, `password`, `fname`, `lname`, `mobile`, `email`, `isAdmin`) VALUES
+(4, 'admin', 'admin', 'admin', '123456789', 'admin@admin.com', 1);
 
 --
 -- Indexes for dumped tables
@@ -130,7 +138,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `userid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

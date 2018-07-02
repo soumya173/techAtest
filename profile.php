@@ -2,19 +2,22 @@
 	include("connect.php");
 ?>
 <?php
-	$sql = "SELECT fname, lname, email, mobile FROM users";
-	$result = mysqli_query($con, $sql);
+	if (isset($_SESSION["user_email"])) {
+		$email=$_SESSION["user_email"] ;
+		$sql = "SELECT fname, lname, email, mobile FROM users where email='$email'";
+		$result = mysqli_query($con, $sql);
 
-	if (mysqli_num_rows($result) > 0) {
-	    // output data of each row
-	    while($row = mysqli_fetch_assoc($result)) {
-	        echo " " . $row["fname"]. " " . $row["lname"]. "<br>";
-	        echo "Email " . $row["email"]. "<br>";
-	        echo "Mobile " . $row["mobile"]. "<br>";
-	    }
-	} else {
-	    echo "0 results";
+		if (mysqli_num_rows($result) == 1) {
+		    // output data of each row
+		    $row = mysqli_fetch_assoc($result);
+		    $fname = $row['fname'];
+		    $lname = $row['lname'];
+		    $mobile=$row['mobile'];
+		}
+	}else{
+		header("Location: index.php");
 	}
+	
 
 // mysqli_close($conn);
 ?>
@@ -76,15 +79,15 @@
 							<h3>BASIC PROFILE</h3>
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-sm-12"><h2 class="profile-name">FirstName <span>LastName</span></h2></div>
+									<div class="col-sm-12"><h1 class="profile-name"><?php echo "$fname"; ?><span><?php echo "  $lname"; ?></span></h1></div>
 								</div>
 								<div class="row">
-									<div class="col-sm-3">Email :</div>
-									<div class="col-em-9">UserEmail</div>
+									<div class="col-sm-3">Email :	</div>
+									<div class="col-em-9"><?php echo "$email"; ?></div>
 								</div>
 								<div class="row">
 									<div class="col-sm-3">Mobile :</div>
-									<div class="col-em-9">UserMobile</div>
+									<div class="col-em-9"><?php echo "$mobile"; ?></div>
 								</div>
 								<div class="row">
 									<div class="col-sm-3">Tag Owned :</div>
